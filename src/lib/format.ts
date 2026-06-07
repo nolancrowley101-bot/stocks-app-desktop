@@ -34,8 +34,16 @@ export function fmtChange(n: number | null | undefined, digits = 2): string {
 }
 
 export function changeClass(n: number | null | undefined): string {
-  if (n == null || !Number.isFinite(n)) return "text-zinc-400";
-  if (n > 0) return "text-emerald-400";
-  if (n < 0) return "text-rose-400";
-  return "text-zinc-400";
+  if (n == null || !Number.isFinite(n)) return "text-[var(--flat)]";
+  if (n > 0) return "text-[var(--gain)]";
+  if (n < 0) return "text-[var(--loss)]";
+  return "text-[var(--flat)]";
+}
+
+export function timeAgo(epochSeconds: number): string {
+  const diff = Math.max(0, Date.now() / 1000 - epochSeconds);
+  if (diff < 60) return "just now";
+  if (diff < 3600) return `${Math.round(diff / 60)}m ago`;
+  if (diff < 86400) return `${Math.round(diff / 3600)}h ago`;
+  return `${Math.round(diff / 86400)}d ago`;
 }

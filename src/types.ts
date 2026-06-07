@@ -49,3 +49,47 @@ export type Alert = {
   createdAt: number;
   lastFiredAt?: number;
 };
+
+export type Mover = {
+  symbol: string;
+  shortName?: string;
+  regularMarketPrice?: number;
+  regularMarketChange?: number;
+  regularMarketChangePercent?: number;
+};
+
+export type NewsItem = {
+  uuid: string;
+  title: string;
+  publisher?: string;
+  link: string;
+  providerPublishTime: number;
+  type?: string;
+  thumbnail?: string;
+};
+
+export type NewsArticleResponse = {
+  item: NewsItem;
+  article:
+    | {
+        ok: true;
+        title?: string;
+        byline?: string;
+        contentHtml: string;
+        textContent: string;
+        excerpt?: string;
+        publishedTime?: string;
+        length: number;
+      }
+    | { ok: false; reason: "fetch" | "parse" | "blocked"; status?: number };
+};
+
+export type SummaryModules = {
+  price?: Record<string, unknown>;
+  summaryDetail?: Record<string, unknown>;
+  assetProfile?: Record<string, unknown>;
+  financialData?: Record<string, unknown>;
+  recommendationTrend?: Record<string, unknown>;
+  defaultKeyStatistics?: Record<string, unknown>;
+  earnings?: Record<string, unknown>;
+};
