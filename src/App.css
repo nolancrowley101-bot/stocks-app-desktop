@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/* Dense, modular dashboard aesthetic to match stocks-services.com */
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: #09090b;
+  color: #e4e4e7;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  font-feature-settings: "tnum" 1, "cv11" 1;
+}
+
+/* Tabular numerals everywhere for prices */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
