@@ -2,9 +2,9 @@ import { openUrl } from "@tauri-apps/plugin-opener";
 import { getSettings } from "../lib/settings";
 
 const PLATFORMS = [
-  { os: "Windows", file: ".exe installer", path: "/downloads/Stocks-Services_latest_x64-setup.exe" },
-  { os: "macOS", file: ".dmg disk image", path: "/downloads/Stocks-Services_latest_x64.dmg" },
-  { os: "Linux", file: ".AppImage", path: "/downloads/Stocks-Services_latest_amd64.AppImage" },
+  { os: "Windows", file: ".exe installer", path: "/downloads/Stocks.Services_latest_x64-setup.exe" },
+  { os: "macOS", file: ".dmg disk image", path: "/downloads/Stocks.Services_latest_x64.dmg" },
+  { os: "Linux", file: ".AppImage", path: "/downloads/Stocks.Services_latest_amd64.AppImage" },
 ];
 
 export function Download() {
